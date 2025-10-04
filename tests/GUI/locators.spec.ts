@@ -1,7 +1,9 @@
 
 import { test, expect } from '@playwright/test';
 import { waitForDebugger } from 'inspector';
-
+//npx playwright codegen https://automationexercise.com/signup -o fullsign.spec.ts 
+//npx playwright codegen https://automationexercise.com/signup --device   "iPhone 13 Pro Max"
+// await page.pause();
 test('try_signup', async ({ page }) => {
   await page.goto('https://automationexercise.com');
 

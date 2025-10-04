@@ -11,8 +11,21 @@ test('try ddl', async ({ page }) => {
 
  await page.locator('button[class="btn btn-default"]').nth(1).click();
 
- await page.locator('#days').selectOption('11');
- await page.locator('//*[@name="months"]').selectOption('January');
- await page.locator('#years').selectOption({label :'2020'});
+await page.locator("#days").selectOption("17");
+await page.locator("#months").selectOption("12");
+await page.locator("#years").selectOption({label :"2000"});
+
+
+
+
+
+
+// by visible text
+//  await page.locator('#days').selectOption('11');
+
+//  // by value
+//  await page.locator('//*[@name="months"]').selectOption({label :'January'});
+//  //by label (label= visible test elly bykon ma been <>)
+//  await page.locator('#years').selectOption({label :'2020'});
  await page.waitForTimeout(20000);
 });
