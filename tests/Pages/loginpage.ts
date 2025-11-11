@@ -15,10 +15,10 @@ export class loginpage {
   }
 
   async goto() {
-    await this.page.goto('https://automationexercise.com/signup');
+    await this.page.goto('');
   }
 
-  async enterLoginData(name :string , email :string) {
+  async enterLoginData(name , email) {
     await this.name.fill(name);
     await this.email.fill(email);
     await this.signButton.click();

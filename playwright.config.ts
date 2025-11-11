@@ -22,7 +22,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: 'allure-playwright',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     headless :false,
@@ -35,10 +35,37 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+
+        {
+      name: 'API',
+    //  grep :/@api/,
+     // grepInvert:/@dd/,
+      //testMatch : '.*hooks',
+      //testIgnore :'.*hooks',
+      use: { 
+        baseURL:"",
+        trace : 'on',
+        headless : true ,
+        
+        },
     },
+
+
+
+  //   {
+  //     name: 'chromium',
+  //     //grep :/@api/ ,
+  //    // grepInvert :/@test/ ,
+  //  testMatch: ['*hooks.spec.ts'],
+  //   //testIgnore :['fullsign.spec.ts'],
+  //    //dependencies :['API'],
+  //    teardown :'API',
+  //     use: { 
+  //            trace : 'off',
+  //             headless : false ,
+  //      baseURL: "https://automationexercise.com/signup"
+  //      },
+  //   },
 
     // {
     //   name: 'firefox',

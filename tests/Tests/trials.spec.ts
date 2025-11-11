@@ -1,16 +1,20 @@
+// reporters   html / list / dot / blob / allure-playwright
+//project= ccc
+
 import { test, expect } from '@playwright/test';
 test.describe('my tests' ,()=>{
-    test('test one', {
-        tag: ['@fast', '@slow'],
-      }, async ({ page }) => {
+    test('test APIIIIIS @test @api', async ({ page }) => {
 
-    console.log("test case one ");
+    console.log("test case APIIIS ");
+    expect(true).toBeTruthy();
 });
 
 
 
-test('tesst two  @fast', async ({ page }) => {
+test('tesst two', async ({ page }) => {
     console.log("test case two ");
+    expect(false).toBeTruthy();
+
 });
 
 });

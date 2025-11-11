@@ -1,22 +1,21 @@
 import { test, expect } from '@playwright/test';
 import { loginpage } from '../Pages/loginpage';
 import { Signuppage } from '../Pages/Signuppage';
-import myData from '../../TestData/logindata.json';  
+import myData from '../../TestData/logindata';  
 
 
+//const data = JSON.parse(JSON.stringify(myData));
 
 
-
-myData.forEach((data) => {
- test(`Full Signup - ${data.name}`, async ({ page }) => {
+ test('FullSignup', async ({ page }) => {
    const login = new loginpage(page);
    const sign = new Signuppage(page);
    await login.goto();
-   await login.enterLoginData(data.name, data.email);
-   // await sign.fillData();
-   // await sign.Assertion();
+   await login.enterLoginData(myData[0].name, myData[0].email);
+    await sign.fillData();
+
  });
-});
+
 
 
 
