@@ -15,7 +15,7 @@ export class loginpage {
   }
 
   async goto() {
-    await this.page.goto('');
+    await this.page.goto('/login');
   }
 
   async enterLoginData(name , email) {

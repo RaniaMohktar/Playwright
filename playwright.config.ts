@@ -22,15 +22,15 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'allure-playwright',
+  reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     headless :false,
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://localhost:3000',
+     baseURL: 'https//automationexersice.com',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'on',
   },
 
   /* Configure projects for major browsers */
@@ -38,34 +38,34 @@ export default defineConfig({
 
         {
       name: 'API',
-    //  grep :/@api/,
-     // grepInvert:/@dd/,
-      //testMatch : '.*hooks',
-      //testIgnore :'.*hooks',
-      use: { 
-        baseURL:"",
-        trace : 'on',
-        headless : true ,
+     // grep :/@API/,
+     // grepInvert:/@API/,
+   // testMatch: ['*hooks*'],
+    testIgnore :['fullsign*'],
+      // use: { 
+      //   baseURL:"https://google.com",
+      //   trace : 'off',
+      //   headless : true ,
         
-        },
+      //   },
     },
 
 
 
-  //   {
-  //     name: 'chromium',
-  //     //grep :/@api/ ,
-  //    // grepInvert :/@test/ ,
-  //  testMatch: ['*hooks.spec.ts'],
-  //   //testIgnore :['fullsign.spec.ts'],
-  //    //dependencies :['API'],
-  //    teardown :'API',
-  //     use: { 
-  //            trace : 'off',
-  //             headless : false ,
-  //      baseURL: "https://automationexercise.com/signup"
-  //      },
-  //   },
+    {
+      name: 'chromium',
+      //grep :/@api/ ,
+     // grepInvert :/@test/ ,
+     testIgnore :['trials*'],
+    //testIgnore :['fullsign.spec.ts'],
+    // dependencies :['API'],
+      teardown :'API',
+    //   use: { 
+    //          trace : 'off',
+    //           headless : false ,
+    //    baseURL: "https://automationexercise.com/signup"
+    //    },
+    },
 
     // {
     //   name: 'firefox',
