@@ -3,7 +3,7 @@
 
 import { test, expect } from '@playwright/test';
 test.describe('my tests' ,()=>{
-    test('test APIIIIIS @test @api', async ({ page }) => {
+    test('test APIIIIIS @test ', async ({ page }) => {
 
     console.log("test case APIIIS ");
     expect(true).toBeTruthy();
